@@ -1,15 +1,28 @@
 import time
 
 
-def how_many_paths_maze() -> int:
-    pass
+def grid_paths(n: int, m: int) -> int:
+    memo = {}
+
+    # base cases
+    for i in range(1, n + 1):
+        memo[(i, 1)] = 1
+    for j in range(1, m + 1):
+        memo[(1, j)] = 1
+
+    # recursive case
+    for i in range (2, n + 1):
+        for j in range(2, m + 1):
+            memo[(i, j)] = memo[(i - 1, j)] + memo[(i, j - 1)]
+
+    return memo[(n, m)]
+
 
 if __name__ == '__main__':
     # time bottom up approach
     start = time.time()
-    print(how_many_paths_maze())
-    print(how_many_paths_maze())
-    print(how_many_paths_maze())
+    print(grid_paths(18, 6))
+    print(grid_paths(75, 19))
     end = time.time()
 
     # print times
