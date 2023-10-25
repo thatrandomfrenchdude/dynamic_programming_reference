@@ -55,7 +55,7 @@ if __name__ == '__main__':
     top_start = time.time()
     print(top_min_coins(13, [1, 4, 5]))  # 3
     print(top_min_coins(150, [1, 4, 5]))  # 30
-    print(top_min_coins(30, [5, 10, 25]))  # 6 --> not giving the correct answer
+    print(top_min_coins(30, [5, 10, 25]))  # 2
     print(top_min_coins(11, [1, 5, 6, 9]))  # 2
     top_end = time.time()
 
